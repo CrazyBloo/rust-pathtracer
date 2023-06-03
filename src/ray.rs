@@ -1,0 +1,29 @@
+use super::vec::{Vec3, Point3};
+
+
+pub struct Ray {
+    origin: Point3,
+    direction: Vec3
+}
+
+impl Ray {
+    pub fn new(orig: Point3, dir: Vec3) -> Self {
+        Ray {
+            origin: orig,
+            direction: dir
+        }
+    }
+
+    pub fn origin(&self) -> Point3 {
+        self.origin
+    }
+
+    pub fn direction(&self) -> Point3 {
+        self.direction
+    }
+
+    pub fn at(&self, t: f64) -> Point3 {
+        self.origin + self.direction * t
+    }
+
+}
